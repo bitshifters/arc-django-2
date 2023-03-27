@@ -1,14 +1,86 @@
 ; Logo plotting.
 
-.equ Logo_Height, 86
+.equ Logo_Width, 216
+.equ Logo_Height, 68
+.equ Logo_Gap, Screen_Stride-Logo_Width/Screen_PixelsPerByte
+.equ Logo_Stride, Logo_Width/Screen_PixelsPerByte
+.equ Logo_Bytes, Logo_Stride*Logo_Height
+
+.equ Logo_Y_Radius, 12
+.equ Logo_Centre_Left, 56
+.equ Logo_Centre_Top, 14
 
 logo_data_p:
     .long logo_data_no_adr
 
-; R9=logo_addr, R12=screen_addr
-; Assume plotting at top of the screen.
+logo_mask_p:
+    .long logo_mask_no_adr
+
+logo_data_shifted_p:
+    .long logo_data_shifted_no_adr
+
+logo_mask_shifted_p:
+    .long logo_mask_shifted_no_adr
+
+logo_data_shift_table:
+    .skip 8*4
+
+logo_mask_shift_table:
+    .skip 8*4
+
+logo_x_rads:
+    .long 0
+
+logo_y_rads:
+    .long 0
+
+logo_x_delta:
+    .long 3<<7      ; period << 8
+
+logo_y_delta:
+    .long 2<<7      ; period << 8
+
+logo_x_radius:
+    .long 20
+
 plot_logo:
-	ldr r9, logo_data_p
+    str lr, [sp, #-4]!
+
+    ; Update x position
+    ldr r0, logo_x_rads
+    ldr r1, logo_x_delta
+    add r0, r0, r1
+    str r0, logo_x_rads
+
+    bl sine
+    ; R0=sin(x_rads)
+    ldr r8, logo_x_radius
+    mul r8, r0, r8
+    mov r8, r8, asr #16
+    mov r1, #Logo_Centre_Left
+    add r8, r8, r1
+
+    ; Update y position
+    ldr r0, logo_y_rads
+    ldr r1, logo_y_delta
+    add r0, r0, r1
+    str r0, logo_y_rads
+    bl cosine
+    ; R0=cos(y_rads)
+    mov r1, #Logo_Y_Radius
+
+    mul r1, r0, r1
+    mov r1, r1, asr #16
+    add r1, r1, #Logo_Centre_Top
+
+    mov r0, r8
+
+    ; Fall through!
+
+; R0=x
+; R1=y
+; R12=screen address
+;plot_logo_at_xy:
     mov r10, #Logo_Height
     mov r11, r12
 
@@ -26,7 +98,7 @@ plot_logo:
     subs r10, r10, #1
     bne .1
 
-    mov pc, lr
+    ldr pc, [sp], #4
 
 .macro logo_shift_right_by_pixels
     mov r8, r8, lsl r10

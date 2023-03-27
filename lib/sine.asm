@@ -13,7 +13,7 @@ sinus_table_p:
 ; Parameters:
 ;  R0 = radians [0.0, 1.0] at fixed point precision. [s1.16]
 ; Returns:
-;  R0 = sin(2 * PI * radians)
+;  R0 = sin(2 * PI * radians)                        [s1.16]
 ; Trashes: R9
 sine:
     ldr r9, sinus_table_p
@@ -26,7 +26,7 @@ sine:
 ; Parameters:
 ;  R0 = radians [0.0, 1.0] at fixed point precision. [s1.16]
 ; Returns:
-;  R0 = cos(2 * PI * radians)
+;  R0 = cos(2 * PI * radians)                        [s1.16]
 ; Trashes: R9
 cosine:
     ldr r9, sinus_table_p

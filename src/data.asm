@@ -75,8 +75,44 @@ music_07_mod_no_adr:
 .incbin "build/music_07.bin"
 
 .p2align 2
-music_08_mod_no_adr:
-.incbin "build/music_08.bin"
+bodoaxian_mod_no_adr:
+.incbin "build/bodoaxian.mod"
+
+.p2align 2
+sajt_mod_no_adr:
+.incbin "build/sajt.mod"
+
+.p2align 2
+holodash_mod_no_adr:
+.incbin "build/holodash.mod"
+
+.p2align 2
+squid_ring_mod_no_adr:
+.incbin "build/squid_ring.mod"
+
+.p2align 2
+lies_mod_no_adr:
+.incbin "build/lies.mod"
+
+.p2align 2
+changing_waves_mod_no_adr:
+.incbin "build/changing_waves.mod"
+
+.p2align 2
+vectrax_mod_no_adr:
+.incbin "build/vectrax.mod"
+
+.p2align 2
+funky_delicious_mod_no_adr:
+.incbin "build/funky_delicious.mod"
+
+.p2align 2
+cool_beans_mod_no_adr:
+.incbin "build/cool_beans.mod"
+
+.p2align 2
+splash_mod_no_adr:
+.incbin "build/music_splash.mod"
 
 ; ============================================================================
 
