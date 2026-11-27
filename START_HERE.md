@@ -32,4 +32,4 @@ Chipo Django 2 musicdisk for the Acorn Archimedes: ARM assembler (vasm + vlink),
 
 ## See also
 
-- `README.md`; `D:\archie\mine\arc-django` (part 1), `D:\archie\mine\archie-verse` (part 3, branch wip/chipo-django3).
+- `README.md`; `D:\bitshifters\arc-django` (part 1), `D:\archie\mine\archie-verse` (part 3, branch wip/chipo-django3).
