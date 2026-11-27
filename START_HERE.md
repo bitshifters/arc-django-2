@@ -17,7 +17,7 @@ Chipo Django 2 musicdisk for the Acorn Archimedes: ARM assembler (vasm + vlink),
 ## Build and run
 
 - `make`: builds the `!Django02` folder (`make.bat folder`). Works (2026-11-22). The `bin\*.py` converters were ported to Python 3 on 2026-11-22 (byte-identical output) and `Makefile.mk` runs them with `PYTHON2?=py -3` (override with `PYTHON2=...`).
-- Other targets: `make deploy` (to `..\arculator\hostfs`), `make shrinkler_build` / `make lz4_build` (release builds), `make help`.
+- Other targets: `make deploy` (to `..\arculator\hostfs\Builds`), `make shrinkler_build` / `make lz4_build` (release builds), `make help`.
 - Run `!Django02` in Arculator (`D:\archie\mine\arculator`).
 
 ## Local changes
