@@ -4,8 +4,8 @@ Chipo Django 2 musicdisk for the Acorn Archimedes: ARM assembler (vasm + vlink),
 
 | | |
 |---|---|
-| GitHub | https://github.com/kieranhj/arc-django-2 (public) |
-| Local path | D:\archie\mine\arc-django-2 (moved from OneDrive\Archie\Repos\arc-django-2 on 2026-11-22) |
+| GitHub | https://github.com/bitshifters/arc-django-2 (public; transferred from kieranhj/arc-django-2 on 2026-11-27, old URL redirects) |
+| Local path | D:\bitshifters\arc-django-2 (moved from D:\archie\mine on 2026-11-27; before that OneDrive\Archie\Repos) |
 | Branch | main; other branches: wip/2026-11-tidy, wip/archie-only, wip/archie-special, wip/cube-visualiser, wip/logo-movement, wip/preshift-scroller-font, wip/triple-buffering, wip/vsync-bug-hunt, wip/vsync-event (all also on origin) |
 | Last commit | 2023-06-24: Create chipo-django2-screenshot.png |
 
